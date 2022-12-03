@@ -10,17 +10,15 @@ class MetodosNumericos{
 		MetodosNumericos();
 		~MetodosNumericos();
 		
-		void setXI(const double _XI);
-		void setXU(const double _XU);
-		void setXR(const double _XR);
-		void setH(const double _H);
+		void setXI(const double);
+		void setXU(const double);
+		void setXR(const double);
+		void setH(const double);
 		
 		const double getXI()const;
 		const double getXU()const;
 		const double getXR()const;
 		const double getH()const;
-		
-		double cambio_signo(const double &, const double &);
 		
 		virtual void solucion()=0;
 		
