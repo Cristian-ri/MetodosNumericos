@@ -1,16 +1,12 @@
 #include "MetodosNumericos.hpp"
-#include <cmath>
-using std::abs;
 
 #ifndef FALSAPOSICION
-#defien FALSAPOSICION
+#define FALSAPOSICION
 
-class FalsaPosicion{
+class FalsaPosicion:public MetodosNumericos {
 	
 	public:
-		FalsaPosicion(const double &, const double &, const double &, 
-						const double &, const double &, const double &);
-		
+		FalsaPosicion(const double &, const double &, const double &);
 		FalsaPosicion();
 		~FalsaPosicion();
 		
@@ -24,8 +20,7 @@ class FalsaPosicion{
 		const double getFR()const;
 		const double getN()const;
 		
-		
-		
+		double solucion(const double, const double);
 		
 	private:
 		double fr;

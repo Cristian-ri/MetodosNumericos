@@ -6,8 +6,8 @@ MetodosNumericos::MetodosNumericos(const double &_XI, const double &_XU){
 }
 
 MetodosNumericos::MetodosNumericos(){
-	xI = 0;
-	xU = 0;
+	this->xI = 0;
+	this->xU = 0;
 }
 
 MetodosNumericos::~MetodosNumericos(){
@@ -44,4 +44,3 @@ const double MetodosNumericos::getXR()const{
 const double MetodosNumericos::getH()const{
 	return h;
 }
-

@@ -20,7 +20,7 @@ class MetodosNumericos{
 		const double getXR()const;
 		const double getH()const;
 		
-		virtual void solucion()=0;
+		virtual double solucion(const double, const double)=0;
 		
 	protected:
 		double xI, xU, xR;
