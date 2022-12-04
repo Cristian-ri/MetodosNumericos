@@ -6,7 +6,7 @@
 class FalsaPosicion:public MetodosNumericos {
 	
 	public:
-		FalsaPosicion(const double &, const double &, const double &);
+		FalsaPosicion(const double, const double, const double);
 		FalsaPosicion();
 		~FalsaPosicion();
 		
@@ -20,7 +20,7 @@ class FalsaPosicion:public MetodosNumericos {
 		const double getFR()const;
 		const double getN()const;
 		
-		double solucion(const double, const double);
+		double solucion();
 		
 	private:
 		double fr;

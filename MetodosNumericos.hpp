@@ -1,12 +1,15 @@
-
 //Clase abstracta
+#include <cmath>
+using std::exp;
+using std::pow;
+
 #ifndef METODOSNUMERICOS
 #define METODOSNUMERICOS
 
 class MetodosNumericos{
 	
 	public:
-		MetodosNumericos(const double &, const double &);
+		MetodosNumericos(const double, const double);
 		MetodosNumericos();
 		~MetodosNumericos();
 		
@@ -20,7 +23,7 @@ class MetodosNumericos{
 		const double getXR()const;
 		const double getH()const;
 		
-		virtual double solucion(const double, const double)=0;
+		virtual double solucion()=0;
 		
 	protected:
 		double xI, xU, xR;

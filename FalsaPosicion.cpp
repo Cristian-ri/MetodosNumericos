@@ -1,10 +1,14 @@
 #include "FalsaPosicion.hpp"
-//#include "Utilitario.h"
+#include "Utilitario.h"
 #include <cmath>
 using std::abs;
+#include <iostream>
+using std::cout;
+using std::endl;
+using std::cin;
 
-FalsaPosicion::FalsaPosicion(const double &_XI, const double &_XU, 
-				const double &_H):MetodosNumericos(_XI, _XU){
+FalsaPosicion::FalsaPosicion(const double _XI, const double _XU, 
+				const double _H):MetodosNumericos(_XI, _XU){
 					this->h = _H;
 }
 
@@ -48,6 +52,30 @@ const double FalsaPosicion::getN()const{
 	return n;
 }
 
-double FalsaPosicion::solucion(const double _FI, const double _FU){	
-	return 0;
+double FalsaPosicion::solucion(){	
+	 
+	this->fi = funcion(getFI());
+	this->fu = funcion(getFU());
+	this->n = (xU-xI)/h;
+	 
+	for(int i=0; i<n; i++){
+		this->xR = (getXI()*getFU()-getXU()*getFI())/(getFU()-getFI());
+		this->fr = funcion(getXR());
+		
+		if(abs(getFR())<getH()){
+			return xR;
+		}
+			
+		if(getFI()*getFR()<0){
+			this->xU = getXR();
+		}
+
+		if(getFI()*getFR()>0){
+			this->xI = getXR();
+		}
+		
+		if(getFI()*getFR()==0){
+			return xR;
+		}
+	}
 }

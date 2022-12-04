@@ -1,6 +1,6 @@
 #include "MetodosNumericos.hpp"
 
-MetodosNumericos::MetodosNumericos(const double &_XI, const double &_XU){
+MetodosNumericos::MetodosNumericos(const double _XI, const double _XU){
 	setXI(_XI);
 	setXU(_XU);
 }
